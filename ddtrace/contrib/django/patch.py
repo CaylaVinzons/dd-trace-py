@@ -401,7 +401,7 @@ def traced_get_response(django, pin, func, instance, args, kwargs):
                 parse.urlunparse(
                     parse.ParseResult(
                         scheme=request.scheme,
-                        netloc=request.get_host(),  # this will include `host:port`
+                        netloc=request._get_raw_host(),  # this will include `host:port`
                         path=request.path,
                         params="",
                         query="",
